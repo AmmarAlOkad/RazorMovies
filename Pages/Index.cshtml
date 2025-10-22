@@ -7,18 +7,22 @@
 <div class="text-center">
     <table class="table table-striped text-center">
         <tr>
-            <th>Id</th>
             <th>Title</th>
             <th>Year</th>
             <th>Rating</th>
+            <th></th>
         </tr>
         @foreach (var item in Model.movies)
         {
             <tr>
-                <td>@item.Id</td>
                 <td>@item.Title</td>
                 <td>@item.Year</td>
                 <td>@item.Rating</td>
+                <td>
+                    <a asp-page="MovieDetails" asp-route-id="@item.Id" class="btn btn-sm btn-info">
+                        Details
+                    </a>
+                </td>
             </tr>
         }
     </table>
