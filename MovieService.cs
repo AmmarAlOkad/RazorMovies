@@ -33,5 +33,9 @@ public class MovieService
 
     public Movie? GetMovieById(int id) => _movies.FirstOrDefault(m => m.Id == id);
 
-
+    public void AddMovie(Movie m)
+    {
+        m.Id = _movies.Max(m => m.Id) + 1;
+        _movies.Add(m);
+    }
 }
