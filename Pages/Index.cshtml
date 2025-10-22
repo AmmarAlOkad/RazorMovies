@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Movie page";
+}
+
+<div class="text-center">
+    <table class="table table-striped text-center">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+        </tr>
+        @foreach (var item in Model.movies)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Year</td>
+                <td>@item.Rating</td>
+            </tr>
+        }
+    </table>
+</div>
